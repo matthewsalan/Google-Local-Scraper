@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <title>SerpApi Sandbox</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  </head>
+  <body>
+    <div class="search--container mt-4">
+      <div class="flex flex-col justify-center px-6 py-60 lg:px-8">
+        <div class="mx-auto">
+          <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        </div>
+        <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-xl">
+          <form class="space-y-6 search--form">
+            <div class="relative mt-2 rounded-md">
+              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-gray-500">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+              </div>
+              <div class="mt-2">
+                <input id="search--input"
+                  class="block w-full rounded-3xl border-0 py-3 pl-12 text-gray-700
+                  ring-1 ring-gray-300 sm:text-sm focus-visible:outline-0 focus-visible:shadow-md">
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit"
+                class="btn-bg mt-2 rounded-sm px-5 py-2 text-sm text-gray-600 hover:outline hover:outline-1
+                  hover:outline-gray-300 tracking-normal hover:shadow-sm">
+                Google Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="results--container max-w-auto px-40 mt-12 hide">
+      <div class="mb-20">
+        <form class="space-y-6 results--form">
+          <div class="mt-2 rounded-md">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+              height="32" width="92" class="float-left mr-12 mt-2">
+            <input id="results--input" class="rounded-3xl border-0 py-3 pl-12 text-gray-700 w-2/5
+              ring-1 ring-gray-300 sm:text-sm focus-visible:outline-0 focus-visible:shadow-md">
+          </div>
+        </form>
+      </div>
+      <div class="loader--container hide">
+        <div class="loader mx-auto mt-72"></div>
+      </div>
+      <div class="mt-8 flow-root">
+        <div class="mb-14 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <ul role="list" class="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8 results--table">
+          </ul>
+        </div>
+      </div>
+      <nav class="items-center justify-between border-t border-gray-200 px-4 sm:px-0 hide pagination mb-12">
+        <div class="-mt-px flex w-0 flex-1 previous--link">
+        </div>
+        <div class="hidden md:-mt-px md:flex pagination--links">
+        </div>
+        <div class="-mt-px flex w-0 flex-1 justify-end next--link">
+        </div>
+      </nav>
+    </div>
+    <div class="error--container mt-4 hide">
+    </div>
+    <script src="script.js" async defer></script>
+    <script src="config.js" async defer></script>
+    <script src="sample_json_resp.js"></script>
+  </body>
+</html>
